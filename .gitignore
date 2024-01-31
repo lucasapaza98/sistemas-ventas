@@ -1,0 +1,8 @@
+# IGNORE FOLDER
+public/template/
+
+
+# IGNORE FILES
+
+*pass.txt
+*sistemas.code-workspace
