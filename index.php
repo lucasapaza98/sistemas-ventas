@@ -85,9 +85,6 @@ require_once("app/controllers/roles/listado_de_roles.php");
         </div>
 
 
-
-
-
       </div>
 
     </div><!-- /.container-fluid -->
