@@ -32,7 +32,7 @@
         Swal.fire({
           icon: "error",
           title: "Fatal Error",
-          text: "<?php echo $respuestas?>",
+          text: "<?php echo $respuestas?>"
         });
       </script>
 
