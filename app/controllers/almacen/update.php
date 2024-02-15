@@ -51,6 +51,7 @@ $sentencia->bindParam(':stock_minimo',$stock_minimo);
 $sentencia->bindParam(':stock_maximo',$stock_maximo);
 $sentencia->bindParam(':precio_compra',$precio_compra);
 $sentencia->bindParam(':precio_venta',$precio_venta);
+$sentencia->bindParam(':fecha_ingreso',$fecha_ingreso);
 $sentencia->bindParam(':imagen',$image_text);
 $sentencia->bindParam(':id_usuario',$id_usuario);
 $sentencia->bindParam(':id_categoria',$id_categoria);
@@ -72,5 +73,10 @@ $sentencia->bindParam(':id_producto',$id_producto);
     $_SESSION["icono"] = "error";
     header('Location: ' . $URL . '/almacen/update.php?id=' . $id_producto);
 }
+
+
+
+
+
 
 ?>
