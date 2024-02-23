@@ -30,7 +30,7 @@ require_once("../app/controllers/almacen/listado_de_productos.php");
     <div class="content">
         <div class="container-fluid">
 
-            <div class="row">
+            <div class="row" style="font-size: 15px;">
                 <div class="col-md-12">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
@@ -73,18 +73,22 @@ require_once("../app/controllers/almacen/listado_de_productos.php");
                                             </th>
 
                                             <th>
-                                                <center>Fecha compra</center>
+                                                <center>Precio compra</center>
                                             </th>
 
                                             <th>
-                                                <center>Fecha venta</center>
+                                                <center>Precio venta</center>
                                             </th>
 
                                             <th>
-                                                <center>Fecha Ingreso</center>
+                                                <center>Fecha Compra</center>
+                                            </th>
+                                           
+                                            <th>
+                                                <center>Usuario</center>
                                             </th>
 
-                                            
+
 
                                             <th>
                                                 <center>Acciones</center>
@@ -107,14 +111,42 @@ require_once("../app/controllers/almacen/listado_de_productos.php");
                                                 <td><?php echo $productos_dato['nombre_categoria']; ?></td>
                                                 <td><?php echo $productos_dato['nombre_producto']; ?></td>
                                                 <td>
-                                                    <img src="<?php echo $URL . "/almacen/img_productos/" . $productos_dato['imagen']; ?>" width="100px" alt="">
+                                                    <img src="<?php echo $URL . "/almacen/img_productos/" . $productos_dato['imagen']; ?>" width="60px" alt="">
                                                 </td>
                                                 <td><?php echo $productos_dato['descripcion_producto']; ?></td>
-                                                <td><?php echo $productos_dato['stock']; ?></td>
 
-                                                <td>$.<?php echo $productos_dato['precio_compra']; ?></td>
-                                                <td>$.<?php echo $productos_dato['precio_venta']; ?></td>
+                                                <?php
+                                                $stock_actual2 = $productos_dato['stock'];
+                                                $stock_max =  $productos_dato['stock_maximo'];
+                                                $stock_min = $productos_dato['stock_minimo'];
+                                                
+                                                if($stock_actual2 < $stock_min){ 
+                                                    ?>
+                                                    <td style="background: #EE8080;"><center><?php echo $productos_dato['stock']; ?></center></td>
+
+                                                <?php
+
+                                                }
+
+                                                else if ($stock_actual2 > $stock_max) {
+                                                ?>
+                                                   
+                                                   <td style="background: #7FEA81;"> <center><?php echo $productos_dato['stock']; ?></center></td> 
+                                                <?php
+                                                } else { 
+                                                ?>
+                                                <td><center><?php echo $productos_dato['stock']; ?></center></td>
+                                                    
+                                                <?php
+
+                                                }
+
+                                                ?>
+                                                
+                                                <td><center>$.<?php echo $productos_dato['precio_compra']; ?></center></td>
+                                                <td><center>$.<?php echo $productos_dato['precio_venta']; ?></center></td>
                                                 <td><?php echo $productos_dato['fecha_ingreso']; ?></td>
+                                                <td><?php echo $productos_dato['nombre_usuario']; ?></td>
 
                                                 <td>
                                                     <center>

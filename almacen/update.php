@@ -100,7 +100,7 @@ require_once("../app/controllers/almacen/cargar_producto.php");
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="">Usuario:</label>
-                                                            <input type="text" class="form-control" value="<?php echo $email; ?>" disabled>
+                                                            <input type="text" class="form-control" value="<?php echo $nombre_usuario; ?>" disabled>
                                                             <input type="text" name="id_usuario" value="<?php echo $id_usuario; ?>" hidden>
                                                         </div>
                                                     </div>

@@ -1,0 +1,7 @@
+Sistemas de ventas 
+
+#	Nombres	Email
+0	Manuel Sequeira	elmanu2345@gmail.com
+1	Federico Felix	fedefelix@gmail.com
+2	Nancy Alvarez	nancygisel@gmail.com
+3	Lucas Apaza	lucasezequielapaza15@gmail.com

@@ -117,7 +117,7 @@ require_once("../app/controllers/categoria/listado_de_categorias.php");
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="">Usuario:</label>
-                                                            <input type="text" class="form-control" value="<?php echo $email_sesion;?>" disabled>
+                                                            <input type="text" class="form-control" value="<?php echo $nombres_sesion;?>" disabled>
                                                             <input type="text" name="id_usuario"value="<?php echo $id_usuario_sesion ;?>" hidden>
                                                         </div>
                                                     </div>
