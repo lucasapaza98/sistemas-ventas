@@ -60,7 +60,7 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                                 <center>Producto</center>
                                             </th>
                                             <th>
-                                                <center>Fecha de la compra</center>
+                                                <center>Fecha compra</center>
                                             </th>
                                             <th>
                                                 <center>Proveedor</center>
@@ -98,7 +98,7 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                                 <td><?php echo $contador++; ?></td>
                                                 <td><?php echo $compras_dato['nro_compra']; ?></td>
                                                 <td>
-                                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-producto<?php echo $id_compra; ?>">
+                                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-producto<?php echo $id_compra; ?>" >
                                                         <?php echo $compras_dato['nombre_producto']; ?> </button>
 
                                                     <!-- MODAL PARA VISUALIZAR DATOS DEL PRODUCTO -->
@@ -229,9 +229,9 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                                     <!-- /.modal -->
 
                                                 </td>
-                                                <td><?php echo $compras_dato['fecha_compra']; ?></td>
+                                                <td><center><?php echo $compras_dato['fecha_compra']; ?></center></td>
                                                 <td>
-                                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-proveedor<?php echo $id_compra; ?>">
+                                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-proveedor<?php echo $id_compra; ?> ">
                                                         <?php echo $compras_dato['nombre_proveedor']; ?> </button>
                                                     <!-- MODAL PARA VISUALIZAR DATOS DEL PROVEEDOR -->
                                                     <div class="modal fade" id="modal-proveedor<?php echo $id_compra; ?>">
@@ -308,8 +308,8 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                                 </td>
                                                 <td><?php echo $compras_dato['comprobante']; ?></td>
                                                 <td><?php echo $compras_dato['nombre_usuario']; ?></td>
-                                                <td>$.<?php echo $compras_dato['precio_de_la_compra']; ?></td>
-                                                <td><?php echo $compras_dato['cantidad']; ?></td>
+                                                <td><center>$.<?php echo $compras_dato['precio_de_la_compra']; ?></center></td>
+                                                <td><center><?php echo $compras_dato['cantidad']; ?></center></td>
 
 
                                                 <td>

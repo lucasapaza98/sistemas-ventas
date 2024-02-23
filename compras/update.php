@@ -6,7 +6,8 @@ require_once("../layout/parte1.php");
 
 require_once("../app/controllers/almacen/listado_de_productos.php");
 require_once("../app/controllers/proveedores/listado_de_proveedores.php");
-require_once("../app/controllers/compras/listado_de_compras.php");
+require_once("../app/controllers/compras/cargar_compras.php");
+
 
 
 
@@ -20,7 +21,7 @@ require_once("../app/controllers/compras/listado_de_compras.php");
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1 class="m-0">Registro de una nueva compra </h1>
+                    <h1 class="m-0">Acualización de la compra </h1>
                 </div><!-- /.col -->
 
             </div><!-- /.row -->
@@ -36,9 +37,9 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                 <div class="col-md-9">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="card card-primary">
+                            <div class="card card-success">
                                 <div class="card-header">
-                                    <h3 class="card-title">Llene los datos de la compra con cuidado</h3>
+                                    <h3 class="card-title">Actualizar los datos de la compra con cuidado</h3>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                                         </button>
@@ -50,7 +51,7 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                     <div style="display:flex;">
                                         <h5>Datos del producto</h5>
                                         <div style="width: 20px;"></div>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-buscar-producto">
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-buscar-producto">
                                             <i class="fas fa-search"></i>
                                             Buscar producto </button>
 
@@ -238,17 +239,17 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <input type="text" id="id_producto" hidden>
+                                                        <input type="text" value="<?= $id_producto_update;?>" id="id_producto" hidden>
 
                                                         <label for="">Código:</label>
-                                                        <input type="text" class="form-control" id="codigo" disabled>
+                                                        <input type="text" value="<?= $codigo;?>" class="form-control" id="codigo" disabled>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label for="">Categoria:</label>
                                                         <div style="display: flex;">
-                                                            <input type="text" class="form-control" id="categoria" disabled>
+                                                            <input type="text" value="<?= $nombre_categoria;?>"  class="form-control" id="categoria" disabled>
 
                                                         </div>
                                                     </div>
@@ -257,7 +258,7 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label for="">Nombre del producto:</label>
-                                                        <input type="text" name="nombre_producto" class="form-control" id="nombre_producto" disabled>
+                                                        <input type="text" value="<?= $nombre_producto2;?>" name="nombre_producto" class="form-control" id="nombre_producto" disabled>
                                                     </div>
 
                                                 </div>
@@ -267,13 +268,13 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label for="">Usuario:</label>
-                                                        <input type="text" class="form-control" id="usuario_producto" disabled>
+                                                        <input type="text" value="<?= $nombre_usuario2;?>" class="form-control" id="usuario_producto" disabled>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
                                                     <div class="form-group">
                                                         <label for="">Descripción del producto:</label>
-                                                        <textarea name="descripcion_producto" id="descripcion_producto" cols="30" rows="2" class="form-control" disabled></textarea>
+                                                        <textarea name="descripcion_producto" id="descripcion_producto" cols="30" rows="2" class="form-control" disabled><?= $descripcion_producto2;?></textarea>
                                                     </div>
                                                 </div>
 
@@ -284,39 +285,39 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label for="">Stock:</label>
-                                                        <input type="number" name="stock" class="form-control" id="stock" style="background-color: #fff819; text-align:center;" disabled>
+                                                        <input type="number" value="<?= $stock2;?>" name="stock" class="form-control" id="stock" style="background-color: #fff819; text-align:center;" disabled>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label for="">Stock mínimo</label>
-                                                        <input type="number" name="stock_minimo" class="form-control" id="stock_minimo" style="text-align: center;" disabled>
+                                                        <input type="number" value="<?= $stock_minimo2;?>" name="stock_minimo" class="form-control" id="stock_minimo" style="text-align: center;" disabled>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label for="">Stock máximo:</label>
-                                                        <input type="number" name="stock_maximo" class="form-control" id="stock_maximo" style="text-align: center;" disabled>
+                                                        <input type="number" value="<?= $stock_maximo2;?>" name="stock_maximo" class="form-control" id="stock_maximo" style="text-align: center;" disabled>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label for="">Precio compra: </label>
-                                                        <input type="number" name="precio_compra" class="form-control" id="precio_compra" style="text-align: center;" disabled>
+                                                        <input type="number" value="<?= $precio_compra_producto;?>" name="precio_compra" class="form-control" id="precio_compra" style="text-align: center;" disabled>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label for="">Precio venta: </label>
-                                                        <input type="number" name="precio_venta" class="form-control" id="precio_venta" style="text-align: center;" disabled>
+                                                        <input type="number" value="<?= $precio_venta_producto;?>" name="precio_venta" class="form-control" id="precio_venta" style="text-align: center;" disabled>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label for="">Fecha de ingreso: </label>
-                                                        <input type="date" name="fecha_ingreso" class="form-control" id="fecha_ingreso" disabled>
+                                                        <input type="date" value="<?= $fecha_ingreso2;?>" name="fecha_ingreso" class="form-control" id="fecha_ingreso" disabled>
                                                     </div>
                                                 </div>
                                             </div>
@@ -337,7 +338,7 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                     <div style="display:flex;">
                                         <h5>Datos del proveedor</h5>
                                         <div style="width: 20px;"></div>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-buscar-proveedor">
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-buscar-proveedor">
                                             <i class="fas fa-search"></i>
                                             Buscar proveedor </button>
 
@@ -494,9 +495,9 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <input type="text" id="id_proveedor" hidden>
+                                                <input type="text" id="id_proveedor" value="<?php echo $id_proveedor_update;?>" hidden>
                                                 <label for="">Nombre del proveedor </label>
-                                                <input type="text" name="" id="nombre_proveedor" class="form-control" disabled>
+                                                <input type="text"value="<?= $nombre_proveedor_update;?>"  name="" id="nombre_proveedor" class="form-control" disabled>
 
                                             </div>
 
@@ -505,14 +506,14 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                             <div class="form-group">
 
                                                 <label for="">Celular </label>
-                                                <input type="number" name="" id="celular" class="form-control" disabled>
+                                                <input type="number"value="<?= $celular_proveedor;?>"  name="" id="celular" class="form-control" disabled>
                                             </div>
 
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="">Telefono </label>
-                                                <input type="number" name="" id="telefono" class="form-control" disabled>
+                                                <input type="number"value="<?= $telefono_proveedor;?>"  name="" id="telefono" class="form-control" disabled>
 
                                             </div>
 
@@ -521,7 +522,7 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                             <div class="form-group">
 
                                                 <label for="">Empresa </label>
-                                                <input type="text" name="" id="empresa" class="form-control" disabled>
+                                                <input type="text"value="<?= $empresa_proveedor;?>"  name="" id="empresa" class="form-control" disabled>
                                             </div>
 
                                         </div>
@@ -529,7 +530,7 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                             <div class="form-group">
 
                                                 <label for="">Email </label>
-                                                <input type="email" name="" id="email" class="form-control" disabled>
+                                                <input type="email"value="<?= $email_proveedor;?>"  name="" id="email" class="form-control" disabled>
                                             </div>
 
                                         </div>
@@ -537,7 +538,7 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                             <div class="form-group">
 
                                                 <label for="">Direccion </label>
-                                                <textarea name="" id="direccion" cols="30" rows="3" class="form-control" disabled></textarea>
+                                                <textarea name="" id="direccion" cols="30" rows="3" class="form-control" disabled><?= $direccion_proveedor;?> </textarea>
                                             </div>
 
                                         </div>
@@ -555,7 +556,7 @@ require_once("../app/controllers/compras/listado_de_compras.php");
 
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="card card-outline card-primary">
+                            <div class="card card-outline card-success">
                                 <div class="card-header">
                                     <h3 class="card-title">Detalle de la compra</h3>
                                     <div class="card-tools">
@@ -568,47 +569,37 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-
-                                                <?php
-                                                $contador_de_compras = 1;
-                                                foreach ($compras_datos as $compras_dato) {
-
-                                                    $contador_de_compras = $contador_de_compras + 1;
-                                                }
-                                                ?>
-
-
                                                 <label for="">Numero de la compra</label>
-                                                <input type="text" class="form-control" value="<?php echo $contador_de_compras; ?>" disabled>
-                                                <input type="text" value="<?php echo $contador_de_compras; ?>" id="numero_compra" hidden>
+                                                <input type="text" class="form-control" style="text-align: center;" value="<?php echo $nro_compra; ?>" disabled>
+                                                <input type="text" value="<?php echo $nro_compra; ?>" id="numero_compra" hidden>
 
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="">Fecha de la compra</label>
-                                                <input type="date" class="form-control" id="fecha_compra2">
+                                                <input type="date"value="<?php echo $fecha_compra; ?>" class="form-control" id="fecha_compra2">
                                             </div>
                                         </div>
 
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="">Comprobante de la compra</label>
-                                                <input type="text" class="form-control" id="comprobante_compra">
+                                                <input type="text"value="<?php echo $comprobante_compra; ?>" class="form-control" id="comprobante_compra">
                                             </div>
                                         </div>
 
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="">Precio de la compra</label>
-                                                <input type="number" class="form-control" id="precio_compra2">
+                                                <input type="number"value="<?php echo $precio_compra22; ?>" class="form-control" id="precio_compra2">
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">Stock actual</label>
-                                                <input type="text" id="stock_actual" class="form-control" style="background-color: #fff819; text-align:center;" disabled>
+                                                <input type="text"value="<?php echo $stock2 = $stock2 - $cantidad_compra_producto; ?>" id="stock_actual" class="form-control" style="background-color: #fff819; text-align:center;" disabled>
                                             </div>
                                         </div>
 
@@ -622,10 +613,16 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="">Cantidad</label>
-                                                <input type="number" id="cantidad_compra" class="form-control" style="text-align: center;">
+                                                <input type="number"value="<?php echo $cantidad_compra_producto; ?>" id="cantidad_compra" class="form-control" style="text-align: center;">
                                             </div>
                                             <script>
                                                 $('#cantidad_compra').keyup(function() {
+                                                    sumacantidades();
+                                                   
+                                                });
+                                                sumacantidades();
+
+                                                function sumacantidades(){
                                                     var stock_actual = $('#stock_actual').val();
                                                     var stock_compra = $('#cantidad_compra').val();
 
@@ -633,8 +630,7 @@ require_once("../app/controllers/compras/listado_de_compras.php");
 
                                                     $('#stock_total').val(total);
 
-
-                                                });
+                                                }
                                             </script>
                                         </div>
 
@@ -642,7 +638,7 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="">Usuario</label>
-                                                <input type="text" class="form-control" value="<?php echo $email_sesion; ?>" disabled>
+                                                <input type="text" class="form-control" value="<?php echo $nombre_usuario2; ?>" disabled>
                                             </div>
                                         </div>
 
@@ -651,19 +647,19 @@ require_once("../app/controllers/compras/listado_de_compras.php");
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <button class="btn btn-primary btn-block" id="btn_guardar_compra">Guardar compra</button>
+                                            <button class="btn btn-success btn-block" id="btn_actualizar_compra">Actualizar compra</button>
                                         </div>
-                                        <div id="respuesta_compras"></div>
+                                        <div id="respuesta_compras_update"></div>
                                     </div>
-
                                     <div class="col-md-12">
                                             <div class="form-group">
                                                <a href="index.php" class="btn btn-secondary btn-block"> Volver</a>
                                             </div>
                                         </div>
                                     <script>
-                                        $('#btn_guardar_compra').click(function() {
+                                        $('#btn_actualizar_compra').click(function() {
 
+                                            var id_compra = '<?php echo $id_compra;?>';
                                             var id_producto = $('#id_producto').val();
                                             var numero_compra = $('#numero_compra').val();
                                             var fecha_compra2 = $('#fecha_compra2').val();
@@ -672,33 +668,32 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                             var id_usuario = '<?php echo $id_usuario_sesion; ?>';
                                             var precio_compra2 = $('#precio_compra2').val();
                                             var cantidad_compra = $('#cantidad_compra').val();
-
                                             var stock_total = $('#stock_total').val();
 
                                             if (id_producto == "") {
                                                 $('#id_producto').focus();
-                                                alert("llenar todos los campos");
+                                                alert("llenar todos los campos de productos");
 
                                             } else if (fecha_compra2 == "") {
                                                 $('#id_producto').focus();
-                                                alert("llenar todos los campos");
+                                                alert("llenar todos los campos de fecha");
 
                                             } else if (comprobante_compra == "") {
                                                 $('#comprobante_compra').focus();
-                                                alert("llenar todos los campos");
+                                                alert("llenar todos los campos de comprobante");
 
                                             } else if (precio_compra2 == "") {
                                                 $('#precio_compra2').focus();
-                                                alert("llenar todos los campos");
+                                                alert("llenar todos los campos de precio compra");
 
                                             } else if (cantidad_compra == "") {
                                                 $('#cantidad_compra').focus();
-                                                alert("llenar todos los campos");
+                                                alert("llenar todos los campos de cantidad compra");
 
                                             } else {
-                                                var url3 = "../app/controllers/compras/create.php";
+                                                var url3 = "../app/controllers/compras/update.php";
                                                 $.get(url3, {
-
+                                                    id_compra:id_compra,
                                                     id_producto:id_producto,
                                                     numero_compra:numero_compra,
                                                     fecha_compra2:fecha_compra2,
@@ -710,7 +705,7 @@ require_once("../app/controllers/compras/listado_de_compras.php");
                                                     stock_total:stock_total
                                                     
                                                 }, function(datos) {
-                                                    $('#respuesta_compras').html(datos);
+                                                    $('#respuesta_compras_update').html(datos);
                                                 });
 
                                             }
