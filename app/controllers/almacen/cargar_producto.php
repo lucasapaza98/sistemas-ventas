@@ -2,7 +2,7 @@
 
 $id_producto_get = $_GET['id'];
 
- $sql_productos = "SELECT *, cat.nombre_categoria as categoria, us.email as email ,us.id_usuarios as id_usuario FROM tb_almacen as a INNER JOIN
+ $sql_productos = "SELECT *, cat.nombre_categoria as categoria, us.nombre as nombre_usuario ,us.id_usuarios as id_usuario FROM tb_almacen as a INNER JOIN
                           tb_categorias as cat on a.id_categoria = cat.id_categoria INNER JOIN tb_usuarios as us on us.id_usuarios = a.id_usuario WHERE id_producto = '$id_producto_get'" ;
  $query_productos = $pdo->prepare($sql_productos);
  $query_productos->execute();
@@ -13,7 +13,7 @@ $id_producto_get = $_GET['id'];
     $codigo = $productos_dato['codigo'];
     $nombre_categoria = $productos_dato['nombre_categoria'];
     $nombre_producto = $productos_dato['nombre_producto'];
-    $email = $productos_dato['email'];
+    $nombre_usuario = $productos_dato['nombre_usuario'];
     $id_usuario = $productos_dato['id_usuario'];
     $descripcion_producto = $productos_dato['descripcion_producto'];
     $stock = $productos_dato['stock'];
