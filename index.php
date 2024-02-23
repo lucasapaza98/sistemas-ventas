@@ -8,6 +8,8 @@ require_once("app/controllers/roles/listado_de_roles.php");
 require_once("app/controllers/categoria/listado_de_categorias.php");
 require_once("app/controllers/almacen/listado_de_productos.php");
 require_once("app/controllers/proveedores/listado_de_proveedores.php");
+require_once("app/controllers/compras/listado_de_compras.php");
+
 
 
 
@@ -157,6 +159,31 @@ require_once("app/controllers/proveedores/listado_de_proveedores.php");
               </div>
             </a>
             <a href="<?php echo $URL; ?>/proveedores" class="small-box-footer">
+              Más información <i class="fas fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+
+          <div class="small-box bg-danger">
+            <div class="inner">
+              <?php
+              $contador_de_compras = 0;
+              foreach ($compras_datos as $compras_dato) {
+
+                $contador_de_compras++;
+              }
+              ?>
+              <h3><?php echo $contador_de_compras; ?></h3>
+              <p>Compras Registradas</p>
+            </div>
+            <a href="<?php echo $URL; ?>/compras">
+              <div class="icon">
+              <i class="fas fa-cart-plus"></i>
+              </div>
+            </a>
+            <a href="<?php echo $URL; ?>/compras" class="small-box-footer">
               Más información <i class="fas fa-arrow-circle-right"></i>
             </a>
           </div>
