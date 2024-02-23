@@ -226,7 +226,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <li class="nav-item">
                   <a href="<?php echo $URL; ?>/proveedores" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Listado de provedores</p>
+                    <p>Listado de proveedores</p>
                   </a>
                 </li>
                
