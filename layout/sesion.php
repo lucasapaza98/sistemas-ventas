@@ -19,7 +19,7 @@ if (isset($_SESSION['sesion_email'])) {
     $id_usuario_sesion = $usuario['id_usuario'];
     $nombres_sesion = $usuario['nombre'];
     $rol_sesion = $usuario['rol'];
-    
+
   }
 } else {
   echo "No existe la sesion";

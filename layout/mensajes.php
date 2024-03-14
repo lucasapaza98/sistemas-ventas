@@ -6,11 +6,11 @@ if ((isset($_SESSION['mensaje'])) && (isset($_SESSION['icono']))) {
 
     <script>
         Swal.fire({
-          position: 'center',
+          position: 'top-end',
           icon:'<?php echo $icono ;?>',
           title:'<?php echo $respuestas ;?>',
           showConfirmButton: false,
-          timer: 2500
+          timer: 2000
         });
     </script>
 

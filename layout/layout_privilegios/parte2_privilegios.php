@@ -11,7 +11,7 @@
 <!-- Main Footer -->
 <footer class="main-footer">
   <!-- Default to the left -->
-  <strong>Copyright &copy; 2024 <a href="<?php echo $URL; ?>">sistemasdeventas.com</a>.</strong> Reservados todos los derechos
+  <strong>Copyright &copy; 2024 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
 </footer>
 </div>
 <!-- ./wrapper -->
